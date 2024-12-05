@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { CancelEditNoteButton, EditNoteButton, EditNoteButtonsContainer, NoteContainer, NoteText, NoteTitle, SaveNoteButton } from "./Note.styled"
+import { NoteContainer, NoteTitle } from "./Note.styled"
 import { useNote, useUpdateNote } from "hooks/api/note"
-import { NoteTextEditer } from "./NoteTextEditer";
+import { NoteTextEditor } from "./NoteTextEditor";
 import { NoteTextViewer } from "./NoteTextViewer";
 
 interface NoteProps {
@@ -14,13 +14,11 @@ export const Note = ({ id } : NoteProps) => {
 
     const [ isEditMode, setEditMode ] = useState(false);
 
-    const title = notes ? notes.title : "";
-
     return (
         <NoteContainer>
             <NoteTitle>{ notes?.title }</NoteTitle>
             { isEditMode ? (
-                <NoteTextEditer
+                <NoteTextEditor
                     editableText={ notes?.text } 
                     onCancel={ () => setEditMode(false) }
                     onSave= { (text: string) => { noteMutation.mutateAsync({ title: (notes ? notes.title : ""), text : text }); setEditMode(false) } }/>

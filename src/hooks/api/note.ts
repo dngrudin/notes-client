@@ -6,6 +6,12 @@ interface UpdateNoteProp {
   text: string
 }
 
+interface CreateNoteProp {
+  id: string
+  title: string
+  text: string
+}
+
 export function useNotes() {
   return useQuery(
     'notes',
@@ -28,6 +34,18 @@ export function useUpdateNote(id: string) {
     {
       onSuccess: () =>
         client.invalidateQueries(['note', id])
+    }
+  );
+}
+
+export function useCreateNote() {
+  const client = useQueryClient();
+  return useMutation(
+    (payload: CreateNoteProp) =>
+      api.createNote({ ...payload }),
+    {
+      onSuccess: () =>
+        client.invalidateQueries('notes')
     }
   );
 }

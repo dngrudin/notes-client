@@ -20,10 +20,12 @@ export const NoteListContainer = styled.div`
     width: 300px;
     height: 100%;
     min-height: 40px;
-    margin-right: 20px;
+    border: solid #606060;
     border-radius: 3px;
     padding: 8px 8px;
     flex-grow: 0;
+    overflow: hidden;
+    overflow-y: auto;
 `
 
 export const NoteTitle = styled.div`
@@ -83,37 +85,7 @@ export const NoteListItemContainer = styled.button<NoteListItemProps>`
     }
 `
 
-export const EditNoteButtonsContainer = styled.div`
+export const ButtonsWrapper = styled.div`
     display: flex;
     justify-content: flex-end;
-`
-
-export const EditNoteButton = styled.button`
-    background-color: #5aac44;
-    border-radius: 3px;
-    border: none;
-    box-shadow: none;
-    color: #fff;
-    padding: 6px 12px;
-    margin: 2px;
-    text-align: center;
-    &:hover {
-        opacity: 0.8;
-    }
-`
-
-export const SaveNoteButton = EditNoteButton
-
-export const CancelEditNoteButton = styled.button`
-    background-color: #ff3333;
-    border-radius: 3px;
-    border: none;
-    box-shadow: none;
-    color: #fff;
-    padding: 6px 12px;
-    margin: 2px;
-    text-align: center;
-    &:hover {
-        opacity: 0.8;
-    }
 `

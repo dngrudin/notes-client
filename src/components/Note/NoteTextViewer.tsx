@@ -1,4 +1,5 @@
-import { EditNoteButton, EditNoteButtonsContainer, NoteText } from "./Note.styled"
+import Button from "components/common/Button/Button.styled"
+import { ButtonsWrapper, NoteText } from "./Note.styled"
 
 interface NoteTextViewerProps {
     viewedText: string | undefined
@@ -9,9 +10,9 @@ export const NoteTextViewer = ({ viewedText, onEdit } : NoteTextViewerProps) => 
     return (
         <>
             <NoteText value={ viewedText ? viewedText : "" }/>
-            <EditNoteButtonsContainer>
-                <EditNoteButton onClick={ () => onEdit() }>Edit</EditNoteButton>
-            </EditNoteButtonsContainer>
+            <ButtonsWrapper>
+                <Button buttonType="do" onClick={ () => onEdit() }>Edit</Button>
+            </ButtonsWrapper>
         </>
     )
 }

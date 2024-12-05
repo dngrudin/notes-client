@@ -24,9 +24,15 @@ const updateNote = async (id: string, body: NoteChange) => {
   console.info(response.status)
 }
 
+const createNote = async (body: Note) => {
+  const response = await apiClient.post(`/notes`, body);
+  console.info(response.status)
+}
+
 export const notesApiClient = {
   getNotes,
   getNote,
   updateNote,
+  createNote,
 }
 
