@@ -1,17 +1,19 @@
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from 'components/App';
-import { AppStateProvider } from 'components/contexts/AppStateContext';
 import reportWebVitals from './reportWebVitals';
+import { AppStateProvider } from 'components/contexts/AppStateContext';
+import { ThemeModeProvider } from 'components/contexts/ThemeModeContext';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
 root.render(
-    <AppStateProvider>
+  <AppStateProvider>
+    <ThemeModeProvider>
       <App />
-    </AppStateProvider>
+    </ThemeModeProvider>
+  </AppStateProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

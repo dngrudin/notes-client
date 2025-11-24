@@ -6,12 +6,12 @@ interface NoteTextViewerProps {
     onEdit: () => void
 }
 
-export const NoteTextViewer = ({ viewedText, onEdit } : NoteTextViewerProps) => {
+export const NoteTextViewer = ({ viewedText, onEdit }: NoteTextViewerProps) => {
     return (
         <>
-            <NoteText value={ viewedText ? viewedText : "" }/>
+            <NoteText value={viewedText ? viewedText : ""} />
             <ButtonsWrapper>
-                <Button buttonType="do" onClick={ () => onEdit() }>Edit</Button>
+                <Button variant="primary" onClick={() => onEdit()}>Edit</Button>
             </ButtonsWrapper>
         </>
     )

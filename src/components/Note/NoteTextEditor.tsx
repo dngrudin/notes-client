@@ -8,15 +8,15 @@ interface NoteTextEditorProps {
     onSave: (text: string) => void;
 }
 
-export const NoteTextEditor = ({ editableText, onCancel, onSave } : NoteTextEditorProps) => {
-    const [ text, setText ] = useState(editableText ? editableText : "");
+export const NoteTextEditor = ({ editableText, onCancel, onSave }: NoteTextEditorProps) => {
+    const [text, setText] = useState(editableText ? editableText : "");
 
     return (
         <>
-            <NoteText value={ text } onChange={ event => { setText(event.target.value) }}/>
+            <NoteText value={text} onChange={event => { setText(event.target.value) }} />
             <ButtonsWrapper>
-                <Button buttonType="cancel" onClick={ () => onCancel() }>Cancel</Button>
-                <Button buttonType="do" onClick={ () => { onSave(text) }}>Save</Button>
+                <Button variant="secondary" onClick={() => onCancel()}>Cancel</Button>
+                <Button variant="primary" onClick={() => { onSave(text) }}>Save</Button>
             </ButtonsWrapper>
         </>
     )

@@ -8,24 +8,24 @@ interface NoteProps {
     id: string
 }
 
-export const Note = ({ id } : NoteProps) => {
+export const Note = ({ id }: NoteProps) => {
     const { data: notes } = useNote(id);
-    const noteMutation =  useUpdateNote(id);
+    const noteMutation = useUpdateNote(id);
 
-    const [ isEditMode, setEditMode ] = useState(false);
+    const [isEditMode, setEditMode] = useState(false);
 
     return (
         <NoteContainer>
-            <NoteTitle>{ notes?.title }</NoteTitle>
-            { isEditMode ? (
+            <NoteTitle>{notes?.title}</NoteTitle>
+            {isEditMode ? (
                 <NoteTextEditor
-                    editableText={ notes?.text } 
-                    onCancel={ () => setEditMode(false) }
-                    onSave= { (text: string) => { noteMutation.mutateAsync({ title: (notes ? notes.title : ""), text : text }); setEditMode(false) } }/>
+                    editableText={notes?.text}
+                    onCancel={() => setEditMode(false)}
+                    onSave={(text: string) => { noteMutation.mutateAsync({ title: (notes ? notes.title : ""), text: text }); setEditMode(false) }} />
             ) : (
                 <NoteTextViewer
-                    viewedText={ notes?.text }
-                    onEdit={ () => setEditMode(true) }/>
+                    viewedText={notes?.text}
+                    onEdit={() => setEditMode(true)} />
             )}
 
         </NoteContainer>

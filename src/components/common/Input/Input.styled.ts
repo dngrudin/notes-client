@@ -1,17 +1,20 @@
 import styled from "styled-components"
 
 export const StyledInput = styled.input`
-    background-color: #FFFFFF;
-    border: 1px #ABB5BA solid;
-    border-radius: 4px;
-    color: #171A1C;
-    height: 40px;
-    width: 100%;
-    font-size: 14px;
+  height: 2.5rem;
+  width: 100%;
+  border-radius: 4px;
+  color: ${props => props.theme.colors.text.primary};
+  border: 1px solid ${props => props.theme.colors.border};
+  background-color: ${props => props.theme.colors.background.primary};
+
+  &:focus {
+    border: 1px solid: ${props => props.theme.colors.accent.active};
+  }
 `
+
 export const InputLabel = styled.label`
-  font-weight: 500;
-  font-size: 12px;
+  font-weight: 600;
   line-height: 20px;
-  color: #454F54;
+  color: ${props => props.theme.colors.text.primary};
 `;

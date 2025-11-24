@@ -1,34 +1,59 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
-type ButtonType = 'do' | 'cancel'
+type ButtonVariant = 'primary' | 'secondary'
 
 export interface ButtonProps {
-    buttonType: ButtonType;
-}
-
-const getColor = (type: ButtonType) : string => {
-    switch (type) {
-        case "do":     return "#5aac44";
-        case "cancel": return "#ff3333";
-    }
+    variant: ButtonVariant;
 }
 
 const Button = styled.button<ButtonProps>`
-    background-color: ${props => getColor(props.buttonType)};
-    border-radius: 3px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     border: none;
-    box-shadow: none;
-    color: #fff;
-    padding: 6px 12px;
-    margin: 2px;
+    border-radius: 4px;
+    padding: 8px 12px;
     text-align: center;
-    &:hover {
-        opacity: 0.8;
-    }
+    white-space: nowrap;
+    font-weight: 500;
+
+    color: ${props => props.theme.colors.text.primary};
+
+    ${props => {
+        switch (props.variant) {
+            case 'primary':
+                return css`
+                    background-color: ${props.theme.colors.accent.primary};
+
+                    &:hover:enabled {
+                        background-color: ${props.theme.colors.accent.hover};
+                    }
+
+                    &:active:enabled {
+                        background-color: ${props.theme.colors.accent.active};
+                    }
+                `;
+
+            case 'secondary':
+                return css`
+                    background-color: ${props.theme.colors.background.tertiary};
+
+                    &:hover:enabled {
+                        background-color: ${props.theme.colors.background.hover};
+                    }
+
+                    &:active:enabled {
+                        background-color: ${props.theme.colors.background.active};
+                    }
+                `;
+        }
+    }}
+
     &:disabled {
         opacity: 0.5;
         cursor: not-allowed;
-        background: #808080;
+        background-color: ${props => props.theme.colors.state.disabled};
     }
 `
 

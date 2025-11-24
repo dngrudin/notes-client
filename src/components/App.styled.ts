@@ -1,20 +1,27 @@
 import styled from "styled-components"
 
-export const AppContainer = styled.div`
-    align-items: flex-start;
-    background-color: #3179ba;
+export const Layout = styled.div`
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 100vh;
     height: 100%;
-    padding: 20px;
     width: 100%;
+`
+export const AppContainer = styled.main`
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-grow: 1;
+    width: 100%;
+    height: 100%;
+    background-color: ${props => props.theme.colors.background.primary};
+    border-top: 1px solid ${props => props.theme.colors.border};
 `
 export const LeftPanelContainer = styled.div`
     display: flex;
     flex-direction: column;
-    background-color: #ebecf0;
     height: 100%;
-    margin-right: 20px;
-    border-radius: 3px;
-    padding: 8px 8px;
+    border-right: 1px solid ${props => props.theme.colors.border};
+    background-color: ${props => props.theme.colors.background.primary};
 `
