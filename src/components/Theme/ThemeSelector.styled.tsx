@@ -61,7 +61,7 @@ export const DropdownItem = styled.li<{ active: boolean }>`
   `}
 `;
 
-export const ArrowIcon = styled.span<{ isOpen: boolean }>`
+export const ArrowIcon = styled.span<{ $opened: boolean }>`
   transition: transform 0.2s ease;
-  transform: ${props => props.isOpen ? 'rotate(180deg)' : 'rotate(0deg)'};
+  transform: ${props => props.$opened ? 'rotate(180deg)' : 'rotate(0deg)'};
 `;

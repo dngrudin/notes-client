@@ -4,6 +4,7 @@ export const AuxiliaryPanelContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-shrink: 0;
     min-height: 2rem;
     padding: 18px;
 `

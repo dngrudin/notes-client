@@ -9,7 +9,7 @@ export const AuxiliaryPanel = ({ onAddButtonClick }: AuxiliaryPanelProps) => {
     return (
         <AuxiliaryPanelContainer>
             <PanelLabel>Notes</PanelLabel>
-            <Button variant="primary" onClick={onAddButtonClick}>Add</Button>
+            <Button $variant="primary" onClick={onAddButtonClick}>Add</Button>
         </AuxiliaryPanelContainer>
     )
 }

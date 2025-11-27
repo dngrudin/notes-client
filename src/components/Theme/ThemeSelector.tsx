@@ -52,7 +52,7 @@ const ThemeSelector: React.FC = () => {
     <DropdownContainer ref={dropdownRef}>
       <DropdownButton onClick={toggleDropdown}>
         {options.find((option) => option.mode === themeMode)?.label || 'Not Selected'}
-        <ArrowIcon isOpen={isOpen}>▼</ArrowIcon>
+        <ArrowIcon $opened={isOpen}>▼</ArrowIcon>
       </DropdownButton>
 
       {isOpen && (

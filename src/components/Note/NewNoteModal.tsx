@@ -26,8 +26,8 @@ export const NewNoteModal = ({ onClosed }: NewNoteModalProps) => {
     <ModalWindow>
       <Input label="Note name" onChange={(e) => { setTitle(e.target.value) }}></Input>
       <ButtonsWrapper>
-        <Button variant="secondary" onClick={() => onClosed()}>Cancel</Button>
-        <Button variant="primary" disabled={title.length === 0} onClick={() => { onCreteNote(title); onClosed() }}>Create</Button>
+        <Button $variant="secondary" onClick={() => onClosed()}>Cancel</Button>
+        <Button $variant="primary" disabled={title.length === 0} onClick={() => { onCreteNote(title); onClosed() }}>Create</Button>
       </ButtonsWrapper>
     </ModalWindow>
   )

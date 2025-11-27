@@ -3,7 +3,7 @@ import styled, { css } from "styled-components"
 type ButtonVariant = 'primary' | 'secondary'
 
 export interface ButtonProps {
-    variant: ButtonVariant;
+    $variant: ButtonVariant;
 }
 
 const Button = styled.button<ButtonProps>`
@@ -21,7 +21,7 @@ const Button = styled.button<ButtonProps>`
     color: ${props => props.theme.colors.text.primary};
 
     ${props => {
-        switch (props.variant) {
+        switch (props.$variant) {
             case 'primary':
                 return css`
                     background-color: ${props.theme.colors.accent.primary};

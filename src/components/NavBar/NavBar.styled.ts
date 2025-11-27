@@ -4,8 +4,9 @@ export const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-shrink: 0;
   min-height: 2rem;
-  padding: 18px;
+  padding: 9px 18px;
   background-color: ${props => props.theme.colors.background.secondary};
 `;
 

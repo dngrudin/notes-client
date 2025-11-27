@@ -11,7 +11,7 @@ export const NoteListItem = ({ id, text, index }: NoteListItemProps) => {
     const { state, dispatch } = useAppState()
 
     return (
-        <NoteListItemContainer onClick={() => { dispatch({ type: "SELECT_NOTE", payload: id }) }} active={state.selectedId === id}>
+        <NoteListItemContainer onClick={() => { dispatch({ type: "SELECT_NOTE", payload: id }) }} selected={state.selectedId === id}>
             {text}
         </NoteListItemContainer>
     )

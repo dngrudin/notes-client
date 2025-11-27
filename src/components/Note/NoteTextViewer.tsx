@@ -11,7 +11,7 @@ export const NoteTextViewer = ({ viewedText, onEdit }: NoteTextViewerProps) => {
         <>
             <NoteText value={viewedText ? viewedText : ""} />
             <ButtonsWrapper>
-                <Button variant="primary" onClick={() => onEdit()}>Edit</Button>
+                <Button $variant="primary" onClick={() => onEdit()}>Edit</Button>
             </ButtonsWrapper>
         </>
     )

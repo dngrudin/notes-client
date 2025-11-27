@@ -3,8 +3,7 @@ import styled from "styled-components"
 export const NoteContainer = styled.div`
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 100%;
+    flex-grow: 1;
     padding: 18px;
     gap: 18px;
     background-color: ${props => props.theme.colors.background.primary};
@@ -15,16 +14,18 @@ export const NoteTitle = styled.div`
     font-weight: 600;
     border-radius: 4px;
     text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     background-color: ${props => props.theme.colors.background.secondary};
     border: 1px solid ${props => props.theme.colors.border};
     color: ${props => props.theme.colors.text.secondary};
 `
 
 export const NoteText = styled.textarea`
-    readonly: none;
+    readonly;
     resize: none;
-    width: 100%;
-    height: 100%;
+    flex-grow: 1;
     border-radius: 4px;
     padding: 18px;
     background-color: ${props => props.theme.colors.background.primary};
@@ -41,8 +42,6 @@ export const EmptyNoteContainer = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    height: 100%;
     font-size: 3rem;
     flex-grow: 1;
     margin: 18px;

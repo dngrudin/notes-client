@@ -45,9 +45,9 @@ const App = () => {
               <NoteList />
             </LeftPanelContainer>
             {state.selectedId ? <Note key={state.selectedId} id={state.selectedId} /> : <EmptyNoteContainer>Select note</EmptyNoteContainer>}
-            {isOpenNewNote && <NewNoteModal onClosed={() => setIsOpenNewNote(false)} />}
           </AppContainer>
         </Layout>
+        {isOpenNewNote && <NewNoteModal onClosed={() => setIsOpenNewNote(false)} />}
       </ThemeProvider>
     </QueryClientProvider>
   )

@@ -15,8 +15,8 @@ export const NoteTextEditor = ({ editableText, onCancel, onSave }: NoteTextEdito
         <>
             <NoteText value={text} onChange={event => { setText(event.target.value) }} />
             <ButtonsWrapper>
-                <Button variant="secondary" onClick={() => onCancel()}>Cancel</Button>
-                <Button variant="primary" onClick={() => { onSave(text) }}>Save</Button>
+                <Button $variant="secondary" onClick={() => onCancel()}>Cancel</Button>
+                <Button $variant="primary" onClick={() => { onSave(text) }}>Save</Button>
             </ButtonsWrapper>
         </>
     )
